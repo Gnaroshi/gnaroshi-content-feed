@@ -1,0 +1,23 @@
+{
+  "activeDays": 0,
+  "components": {
+    "consistency": null,
+    "depth": null,
+    "output": null,
+    "retrieval": null
+  },
+  "confidence": "insufficient",
+  "contentStage": "substantive",
+  "createdAt": "1970-01-01T00:00:00.000Z",
+  "evidenceCount": 0,
+  "graphEligible": true,
+  "id": "growth-snapshot",
+  "metricEligible": false,
+  "periodEnd": "1970-01-01",
+  "periodStart": "1970-01-01",
+  "schemaVersion": 1,
+  "score": null,
+  "updatedAt": "1970-01-01T00:00:00.000Z",
+  "visibility": "public",
+  "weeklyReviewEligible": true
+}

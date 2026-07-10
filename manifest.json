@@ -1,15 +1,28 @@
 {
-  "schemaVersion": 1,
-  "sourceRepository": "Gnaroshi/gnaroshi.github.io",
-  "sourceCommit": "42ad8002c99a1bd09e059519d684620f87a432a6",
-  "generatedAt": "2026-07-10T00:00:00Z",
-  "state": "bootstrap-empty",
-  "entries": {
-    "blog": 0,
+  "contentHash": "bbd806c7e921b6fe69d312154e948fc6afba857af3222aef72c3720df37e1faa",
+  "contentStage": "substantive",
+  "counts": {
+    "activityDays": 0,
+    "assets": 0,
+    "blogPosts": 0,
+    "graphNodes": 0,
+    "oralExams": 0,
     "papers": 0,
     "reviews": 0,
-    "oralExams": 0,
     "weeklyReviews": 0
   },
-  "excludedClassifications": ["seed", "demo", "draft", "hidden", "meta-only"]
+  "createdAt": "1970-01-01T00:00:00.000Z",
+  "generatedAt": null,
+  "generator": "@gnaroshi/publisher@0.1.0",
+  "graphEligible": false,
+  "id": "public-feed-manifest",
+  "metricEligible": false,
+  "schemaVersion": 1,
+  "sourceCommits": {
+    "paperLab": "88cfd2d3f623a40d252ca9a81f81c5d67fac1ebc",
+    "writing": "b9068b928ff35031279e5242a24fdebd3c050be6"
+  },
+  "updatedAt": "1970-01-01T00:00:00.000Z",
+  "visibility": "public",
+  "weeklyReviewEligible": false
 }
