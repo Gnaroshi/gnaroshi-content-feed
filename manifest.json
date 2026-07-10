@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "sourceRepository": "Gnaroshi/gnaroshi.github.io",
+  "sourceCommit": "42ad8002c99a1bd09e059519d684620f87a432a6",
+  "generatedAt": "2026-07-10T00:00:00Z",
+  "state": "bootstrap-empty",
+  "entries": {
+    "blog": 0,
+    "papers": 0,
+    "reviews": 0,
+    "oralExams": 0,
+    "weeklyReviews": 0
+  },
+  "excludedClassifications": ["seed", "demo", "draft", "hidden", "meta-only"]
+}
