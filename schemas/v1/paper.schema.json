@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gnaroshi.dev/schemas/v1/paper.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "id": { "type": "string", "minLength": 1 }, "schemaVersion": { "const": 1 },
+    "createdAt": { "$ref": "https://gnaroshi.dev/schemas/index.json#/$defs/timestamp" }, "updatedAt": { "$ref": "https://gnaroshi.dev/schemas/index.json#/$defs/timestamp" },
+    "visibility": { "enum": ["public", "unlisted"] }, "contentStage": { "$ref": "https://gnaroshi.dev/schemas/index.json#/$defs/contentStage" },
+    "metricEligible": { "type": "boolean" }, "graphEligible": { "type": "boolean" }, "weeklyReviewEligible": { "type": "boolean" },
+    "locale": { "$ref": "https://gnaroshi.dev/schemas/index.json#/$defs/locale" }, "translationKey": { "type": "string", "minLength": 1 },
+    "translationStatus": { "$ref": "https://gnaroshi.dev/schemas/index.json#/$defs/translationStatus" },
+    "canonicalSlug": { "$ref": "https://gnaroshi.dev/schemas/index.json#/$defs/slug" }, "aliases": { "$ref": "https://gnaroshi.dev/schemas/index.json#/$defs/aliases" },
+    "title": { "type": "string", "minLength": 1 }, "authors": { "type": "array", "items": { "type": "string", "minLength": 1 }, "minItems": 1 },
+    "venue": { "type": "string" }, "year": { "type": "integer", "minimum": 1900, "maximum": 2200 },
+    "paperUrl": { "type": "string", "format": "uri" }, "codeUrl": { "type": "string", "format": "uri" }, "projectUrl": { "type": "string", "format": "uri" },
+    "status": { "enum": ["planned", "pass1", "pass2", "pass3", "read", "implemented", "abandoned"] },
+    "depth": { "enum": ["skim", "understand", "deep", "reproduce", "implement"] }, "priority": { "enum": ["low", "medium", "high"] },
+    "difficulty": { "type": "integer", "minimum": 1, "maximum": 5 }, "tags": { "type": "array", "items": { "type": "string", "minLength": 1 }, "uniqueItems": true },
+    "relatedTopics": { "type": "array", "items": { "type": "string", "minLength": 1 }, "uniqueItems": true },
+    "publicReadingSessionSummary": {
+      "type": "object", "additionalProperties": false,
+      "properties": { "readingSessions": { "type": "integer", "minimum": 0 }, "readingMinutes": { "type": "integer", "minimum": 0 }, "activeDays": { "type": "integer", "minimum": 0 }, "completedPasses": { "type": "integer", "minimum": 0 }, "revisits": { "type": "integer", "minimum": 0 } },
+      "minProperties": 1
+    },
+    "readingSessions": { "type": "array", "items": { "$ref": "https://gnaroshi.dev/schemas/index.json#/$defs/readingSession" } },
+    "oneLineSummary": { "type": "string", "minLength": 1 }, "coreQuestion": { "type": "string", "minLength": 1 }, "coreIdea": { "type": "string", "minLength": 1 },
+    "formula": { "type": "string", "minLength": 1 }, "formulaTerms": { "type": "array", "items": { "$ref": "https://gnaroshi.dev/schemas/index.json#/$defs/formulaTerm" } },
+    "formulaInterpretation": { "type": "string", "minLength": 1 }, "experimentTakeaway": { "type": "string", "minLength": 1 },
+    "strengths": { "type": "array", "items": { "type": "string", "minLength": 1 }, "minItems": 1 }, "weaknesses": { "type": "array", "items": { "type": "string", "minLength": 1 }, "minItems": 1 },
+    "publicResearchConnection": { "type": "string", "minLength": 1 }, "nextAction": { "type": "string", "minLength": 1 },
+    "futureMe": { "$ref": "https://gnaroshi.dev/schemas/index.json#/$defs/futureMe" }, "selectedReview": { "$ref": "https://gnaroshi.dev/schemas/index.json#/$defs/reviewSummary" },
+    "selectedOralExam": { "$ref": "https://gnaroshi.dev/schemas/index.json#/$defs/oralExamSummary" },
+    "selectedImplementations": { "type": "array", "items": { "$ref": "https://gnaroshi.dev/schemas/index.json#/$defs/implementationReference" }, "minItems": 1 },
+    "featured": { "type": "boolean" }, "assets": { "type": "array", "items": { "$ref": "https://gnaroshi.dev/schemas/index.json#/$defs/publicPath" }, "uniqueItems": true },
+    "reviewAfterDays": { "type": "integer", "minimum": 1 }, "nextReviewAt": { "$ref": "https://gnaroshi.dev/schemas/index.json#/$defs/date" }
+  },
+  "required": ["id", "schemaVersion", "createdAt", "updatedAt", "visibility", "contentStage", "metricEligible", "graphEligible", "weeklyReviewEligible", "locale", "translationKey", "translationStatus", "canonicalSlug", "aliases", "title", "authors", "venue", "year", "status", "depth", "priority", "difficulty", "tags", "relatedTopics", "featured", "assets"]
+}

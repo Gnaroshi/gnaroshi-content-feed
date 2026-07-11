@@ -1,13 +1,1 @@
-{
-  "contentStage": "substantive",
-  "createdAt": "1970-01-01T00:00:00.000Z",
-  "edges": [],
-  "graphEligible": true,
-  "id": "research-graph",
-  "metricEligible": false,
-  "nodes": [],
-  "schemaVersion": 1,
-  "updatedAt": "1970-01-01T00:00:00.000Z",
-  "visibility": "public",
-  "weeklyReviewEligible": false
-}
+null

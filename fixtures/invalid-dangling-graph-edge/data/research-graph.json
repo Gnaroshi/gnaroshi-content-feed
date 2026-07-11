@@ -1,0 +1,26 @@
+{
+  "id": "research-graph",
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-11T00:00:00.000Z",
+  "eligible": false,
+  "eligibilityThreshold": 1,
+  "nodes": [
+    {
+      "id": "paper:paper-one",
+      "nodeType": "paper",
+      "locale": "en",
+      "label": "A Public Paper",
+      "href": "/papers/paper-one/",
+      "tags": []
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge:bad",
+      "sourceId": "paper:paper-one",
+      "targetId": "paper:missing",
+      "relation": "cites",
+      "inferred": false
+    }
+  ]
+}

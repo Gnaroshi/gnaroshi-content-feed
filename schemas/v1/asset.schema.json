@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "https://gnaroshi.dev/schemas/v1/asset.schema.json",
+  "type": "object", "additionalProperties": false,
+  "properties": {
+    "id": { "type": "string", "minLength": 1 }, "schemaVersion": { "const": 1 }, "filename": { "type": "string", "pattern": "^[^/]+\\.(?:avif|webp|png|jpe?g|svg)$" },
+    "mediaType": { "enum": ["image/avif", "image/webp", "image/png", "image/jpeg", "image/svg+xml"] }, "byteSize": { "type": "integer", "minimum": 1, "maximum": 5242880 },
+    "width": { "type": "integer", "minimum": 1, "maximum": 8192 }, "height": { "type": "integer", "minimum": 1, "maximum": 8192 },
+    "contentHash": { "$ref": "https://gnaroshi.dev/schemas/index.json#/$defs/hash" }, "alt": { "type": "string", "minLength": 1 },
+    "provenance": { "type": "string", "minLength": 1 }, "publicPath": { "$ref": "https://gnaroshi.dev/schemas/index.json#/$defs/publicPath" }
+  },
+  "required": ["id", "schemaVersion", "filename", "mediaType", "byteSize", "width", "height", "contentHash", "alt", "provenance", "publicPath"]
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "https://gnaroshi.dev/schemas/v1/growth-snapshot.schema.json",
+  "oneOf": [
+    { "type": "null" },
+    {
+      "type": "object", "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 }, "schemaVersion": { "const": 1 }, "generatedAt": { "$ref": "https://gnaroshi.dev/schemas/index.json#/$defs/timestamp" },
+        "metricEligible": { "type": "boolean" }, "periodStart": { "$ref": "https://gnaroshi.dev/schemas/index.json#/$defs/date" }, "periodEnd": { "$ref": "https://gnaroshi.dev/schemas/index.json#/$defs/date" },
+        "score": { "type": ["number", "null"], "minimum": 0, "maximum": 100 }, "confidence": { "enum": ["insufficient", "low", "medium", "high"] },
+        "evidenceCount": { "type": "integer", "minimum": 0 }, "activeDays": { "type": "integer", "minimum": 0 },
+        "components": { "type": "object", "additionalProperties": { "type": ["number", "null"], "minimum": 0, "maximum": 100 } }
+      },
+      "required": ["id", "schemaVersion", "generatedAt", "metricEligible", "periodStart", "periodEnd", "score", "confidence", "evidenceCount", "activeDays", "components"]
+    }
+  ]
+}
