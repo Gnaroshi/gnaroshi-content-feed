@@ -3,7 +3,7 @@
   "state": "generated",
   "contentStage": "substantive",
   "metricEligible": false,
-  "graphEligible": true,
+  "graphEligible": false,
   "weeklyReviewEligible": false,
   "generatedAt": "2026-07-11T00:00:00.000Z",
   "sourceCommits": {
@@ -11,7 +11,7 @@
     "writing": "2222222222222222222222222222222222222222"
   },
   "counts": {
-    "papers": 1,
+    "papers": 0,
     "blogPosts": 1,
     "readingSessions": 0,
     "reviews": 0,
@@ -20,10 +20,10 @@
     "implementations": 0,
     "activityDays": 0,
     "weeklyReviews": 0,
-    "graphNodes": 2,
-    "graphEdges": 1,
+    "graphNodes": 0,
+    "graphEdges": 0,
     "assets": 0
   },
-  "contentHash": "361a85f3533ba6eb8390a193116eccee740916ab768df042152b2fb182d4ac72",
+  "contentHash": "b107a952d63b0f1a762fa7cc4c9d141a12458f9c84115874fd77dea58ae83780",
   "generator": "fixture@1"
 }
