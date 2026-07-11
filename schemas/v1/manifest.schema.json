@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gnaroshi.dev/schemas/v1/manifest.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "state": { "enum": ["bootstrap-empty", "generated", "invalid"] },
+    "contentStage": { "$ref": "https://gnaroshi.dev/schemas/index.json#/$defs/contentStage" },
+    "metricEligible": { "type": "boolean" },
+    "graphEligible": { "type": "boolean" },
+    "weeklyReviewEligible": { "type": "boolean" },
+    "generatedAt": { "oneOf": [{ "$ref": "https://gnaroshi.dev/schemas/index.json#/$defs/timestamp" }, { "type": "null" }] },
+    "sourceCommits": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "paperLab": { "$ref": "https://gnaroshi.dev/schemas/index.json#/$defs/sha" },
+        "writing": { "$ref": "https://gnaroshi.dev/schemas/index.json#/$defs/sha" }
+      },
+      "required": ["paperLab", "writing"]
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "papers": { "type": "integer", "minimum": 0 },
+        "blogPosts": { "type": "integer", "minimum": 0 },
+        "readingSessions": { "type": "integer", "minimum": 0 },
+        "reviews": { "type": "integer", "minimum": 0 },
+        "oralExams": { "type": "integer", "minimum": 0 },
+        "formulaRecalls": { "type": "integer", "minimum": 0 },
+        "implementations": { "type": "integer", "minimum": 0 },
+        "activityDays": { "type": "integer", "minimum": 0 },
+        "weeklyReviews": { "type": "integer", "minimum": 0 },
+        "graphNodes": { "type": "integer", "minimum": 0 },
+        "graphEdges": { "type": "integer", "minimum": 0 },
+        "assets": { "type": "integer", "minimum": 0 }
+      },
+      "required": ["papers", "blogPosts", "readingSessions", "reviews", "oralExams", "formulaRecalls", "implementations", "activityDays", "weeklyReviews", "graphNodes", "graphEdges", "assets"]
+    },
+    "contentHash": { "$ref": "https://gnaroshi.dev/schemas/index.json#/$defs/hash" },
+    "generator": { "type": "string", "minLength": 1 }
+  },
+  "required": ["schemaVersion", "state", "contentStage", "metricEligible", "graphEligible", "weeklyReviewEligible", "generatedAt", "sourceCommits", "counts", "contentHash", "generator"],
+  "allOf": [
+    {
+      "if": { "properties": { "state": { "const": "bootstrap-empty" } }, "required": ["state"] },
+      "then": {
+        "properties": {
+          "contentStage": { "const": "seed" },
+          "metricEligible": { "const": false },
+          "graphEligible": { "const": false },
+          "weeklyReviewEligible": { "const": false },
+          "generatedAt": { "type": "null" },
+          "counts": { "propertyNames": {}, "additionalProperties": { "const": 0 } }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "state": { "const": "generated" } }, "required": ["state"] },
+      "then": { "properties": { "generatedAt": { "$ref": "https://gnaroshi.dev/schemas/index.json#/$defs/timestamp" } } }
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "https://gnaroshi.dev/schemas/v1/paper-review.schema.json",
+  "type": "object", "additionalProperties": false,
+  "properties": {
+    "id": { "type": "string", "minLength": 1 }, "schemaVersion": { "const": 1 }, "visibility": { "enum": ["public", "unlisted"] },
+    "contentStage": { "$ref": "https://gnaroshi.dev/schemas/index.json#/$defs/contentStage" }, "metricEligible": { "type": "boolean" }, "graphEligible": { "type": "boolean" }, "weeklyReviewEligible": { "type": "boolean" },
+    "paperId": { "type": "string", "minLength": 1 }, "reviewedAt": { "$ref": "https://gnaroshi.dev/schemas/index.json#/$defs/timestamp" }, "reviewer": { "enum": ["self", "ai", "peer"] },
+    "overallScore": { "type": ["number", "null"], "minimum": 0, "maximum": 100 }, "confidence": { "enum": ["low", "medium", "high"] },
+    "summary": { "type": "string", "minLength": 1 }, "strengths": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "gaps": { "type": "array", "items": { "type": "string", "minLength": 1 } }, "nextActions": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "dimensions": { "type": "object", "additionalProperties": { "type": "object", "additionalProperties": false, "properties": { "score": { "type": "number", "minimum": 0, "maximum": 10 }, "feedback": { "type": "string", "minLength": 1 }, "evidence": { "type": "string", "minLength": 1 }, "nextStep": { "type": "string", "minLength": 1 } }, "required": ["score", "feedback", "evidence", "nextStep"] } },
+    "history": { "type": "array", "items": { "type": "object", "additionalProperties": false, "properties": { "reviewedAt": { "$ref": "https://gnaroshi.dev/schemas/index.json#/$defs/timestamp" }, "overallScore": { "type": "number", "minimum": 0, "maximum": 100 }, "dimensionScores": { "type": "object", "additionalProperties": { "type": "number", "minimum": 0, "maximum": 10 } } }, "required": ["reviewedAt", "overallScore"] } }
+  },
+  "required": ["id", "schemaVersion", "visibility", "contentStage", "metricEligible", "graphEligible", "weeklyReviewEligible", "paperId", "reviewedAt", "reviewer", "overallScore", "confidence", "summary", "strengths", "gaps", "nextActions"]
+}

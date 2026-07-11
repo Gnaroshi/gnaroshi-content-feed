@@ -1,0 +1,21 @@
+{
+  "name": "@gnaroshi/content-feed-contract",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "esbuild scripts/feed-validation.mjs --bundle --platform=node --format=cjs --target=node20 --outfile=dist/feed-validate.cjs",
+    "feed:validate": "node dist/feed-validate.cjs",
+    "fixtures:build": "node scripts/build-fixtures.mjs",
+    "test": "npm run build && npm run fixtures:build && node --test tests/feed-validation.test.mjs"
+  },
+  "dependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
+    "gray-matter": "^4.0.3",
+    "image-size": "^2.0.2"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.0"
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gnaroshi.dev/schemas/index.json",
+  "schemaVersion": 1,
+  "schemas": {
+    "manifest": "v1/manifest.schema.json",
+    "blogPost": "v1/blog-post.schema.json",
+    "paper": "v1/paper.schema.json",
+    "paperReview": "v1/paper-review.schema.json",
+    "oralExam": "v1/oral-exam.schema.json",
+    "formulaRecall": "v1/formula-recall.schema.json",
+    "implementation": "v1/implementation.schema.json",
+    "activityCalendar": "v1/activity-calendar.schema.json",
+    "growthSnapshot": "v1/growth-snapshot.schema.json",
+    "weeklyReview": "v1/weekly-review.schema.json",
+    "researchGraph": "v1/research-graph.schema.json",
+    "asset": "v1/asset.schema.json"
+  },
+  "$defs": {
+    "locale": { "enum": ["en", "ko"] },
+    "translationStatus": { "enum": ["complete", "partial", "source-only"] },
+    "contentStage": { "enum": ["seed", "working", "substantive"] },
+    "date": { "type": "string", "format": "date" },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "sha": { "type": "string", "pattern": "^[a-f0-9]{40}$" },
+    "hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "slug": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$", "minLength": 1, "maxLength": 160 },
+    "aliases": { "type": "array", "items": { "$ref": "#/$defs/slug" }, "uniqueItems": true },
+    "publicPath": { "type": "string", "pattern": "^/assets/[a-f0-9]{64}/[^/]+$" },
+    "eligibility": {
+      "type": "object",
+      "properties": {
+        "metricEligible": { "type": "boolean" },
+        "graphEligible": { "type": "boolean" },
+        "weeklyReviewEligible": { "type": "boolean" }
+      },
+      "required": ["metricEligible", "graphEligible", "weeklyReviewEligible"]
+    },
+    "readingSession": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "date": { "$ref": "#/$defs/date" },
+        "pass": { "enum": ["pass1", "pass2", "pass3", "revisit", "implementation"] },
+        "minutes": { "type": "integer", "minimum": 0 },
+        "outcome": { "enum": ["started", "completed", "paused", "abandoned"] },
+        "completedPasses": { "type": "integer", "minimum": 0 },
+        "deep": { "type": "boolean" }
+      },
+      "required": ["id", "date", "pass", "minutes", "outcome"]
+    },
+    "formulaTerm": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": { "symbol": { "type": "string", "minLength": 1 }, "meaning": { "type": "string", "minLength": 1 } },
+      "required": ["symbol", "meaning"]
+    },
+    "futureMe": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "oneThingToRemember": { "type": "string", "minLength": 1 },
+        "whyItMatters": { "type": "string", "minLength": 1 },
+        "whenToUseThis": { "type": "string", "minLength": 1 },
+        "whatToRevisit": { "type": "string", "minLength": 1 },
+        "warning": { "type": "string", "minLength": 1 }
+      },
+      "minProperties": 1
+    },
+    "reviewSummary": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "reviewId": { "type": "string", "minLength": 1 },
+        "overallScore": { "type": ["number", "null"], "minimum": 0, "maximum": 100 },
+        "confidence": { "enum": ["low", "medium", "high"] },
+        "summary": { "type": "string", "minLength": 1 },
+        "reviewedAt": { "$ref": "#/$defs/timestamp" },
+        "reviewer": { "enum": ["self", "ai", "peer"] }
+      },
+      "required": ["reviewId", "confidence", "summary", "reviewedAt", "reviewer"]
+    },
+    "oralExamSummary": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "oralExamId": { "type": "string", "minLength": 1 },
+        "date": { "$ref": "#/$defs/date" },
+        "questionsAnswered": { "type": "integer", "minimum": 0 },
+        "totalQuestions": { "type": "integer", "minimum": 1 },
+        "overallScore": { "type": ["number", "null"], "minimum": 0, "maximum": 100 },
+        "confidence": { "enum": ["low", "medium", "high"] },
+        "summary": { "type": "string", "minLength": 1 }
+      },
+      "required": ["oralExamId", "date", "questionsAnswered", "totalQuestions", "confidence"]
+    },
+    "implementationReference": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "implementationId": { "type": "string", "minLength": 1 },
+        "title": { "type": "string", "minLength": 1 },
+        "status": { "enum": ["planned", "in-progress", "partially-reproduced", "reproduced", "failed", "abandoned", "shipped"] },
+        "href": { "type": "string", "pattern": "^/" }
+      },
+      "required": ["implementationId", "title", "status"]
+    }
+  }
+}

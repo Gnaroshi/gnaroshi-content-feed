@@ -1,0 +1,16 @@
+[
+  {
+    "date": "2026-07-11",
+    "readingSessions": 1,
+    "distinctPapersTouched": 1,
+    "readingMinutes": 99,
+    "activeDay": true,
+    "completedPasses": 1,
+    "revisits": 0,
+    "implementations": 0,
+    "deepSessions": 0,
+    "paperIds": [
+      "paper-one"
+    ]
+  }
+]

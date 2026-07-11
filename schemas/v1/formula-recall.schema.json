@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "https://gnaroshi.dev/schemas/v1/formula-recall.schema.json",
+  "type": "object", "additionalProperties": false,
+  "properties": {
+    "id": { "type": "string", "minLength": 1 }, "schemaVersion": { "const": 1 }, "visibility": { "enum": ["public", "unlisted"] },
+    "contentStage": { "$ref": "https://gnaroshi.dev/schemas/index.json#/$defs/contentStage" }, "metricEligible": { "type": "boolean" }, "graphEligible": { "type": "boolean" }, "weeklyReviewEligible": { "type": "boolean" },
+    "paperId": { "type": "string", "minLength": 1 }, "date": { "$ref": "https://gnaroshi.dev/schemas/index.json#/$defs/date" },
+    "prompt": { "type": "string", "minLength": 1 }, "score": { "type": ["number", "null"], "minimum": 0, "maximum": 100 },
+    "confidence": { "enum": ["low", "medium", "high"] }, "feedback": { "type": "string", "minLength": 1 }
+  },
+  "required": ["id", "schemaVersion", "visibility", "contentStage", "metricEligible", "graphEligible", "weeklyReviewEligible", "paperId", "date", "prompt", "score", "confidence", "feedback"]
+}

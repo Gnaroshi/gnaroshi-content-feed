@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "https://gnaroshi.dev/schemas/v1/oral-exam.schema.json",
+  "type": "object", "additionalProperties": false,
+  "properties": {
+    "id": { "type": "string", "minLength": 1 }, "schemaVersion": { "const": 1 }, "visibility": { "enum": ["public", "unlisted"] },
+    "contentStage": { "$ref": "https://gnaroshi.dev/schemas/index.json#/$defs/contentStage" }, "metricEligible": { "type": "boolean" }, "graphEligible": { "type": "boolean" }, "weeklyReviewEligible": { "type": "boolean" },
+    "paperId": { "type": "string", "minLength": 1 }, "date": { "$ref": "https://gnaroshi.dev/schemas/index.json#/$defs/date" }, "mode": { "enum": ["manual", "text", "voice"] },
+    "questionsAnswered": { "type": "integer", "minimum": 0 }, "totalQuestions": { "type": "integer", "minimum": 1 },
+    "overallScore": { "type": ["number", "null"], "minimum": 0, "maximum": 100 }, "confidence": { "enum": ["low", "medium", "high"] },
+    "summary": { "type": "string", "minLength": 1 }, "missedSignals": { "type": "array", "items": { "type": "string", "minLength": 1 } }, "followUpQuestion": { "type": "string", "minLength": 1 }
+  },
+  "required": ["id", "schemaVersion", "visibility", "contentStage", "metricEligible", "graphEligible", "weeklyReviewEligible", "paperId", "date", "mode", "questionsAnswered", "totalQuestions", "overallScore", "confidence"]
+}

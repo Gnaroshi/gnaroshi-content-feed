@@ -1,0 +1,14 @@
+[
+  {
+    "id": "paper-pair-en",
+    "locale": "en",
+    "canonicalSlug": "paper-pair-english",
+    "title": "A Public Paper"
+  },
+  {
+    "id": "paper-pair-ko",
+    "locale": "ko",
+    "canonicalSlug": "paper-pair-korean",
+    "title": "공개 논문 노트"
+  }
+]

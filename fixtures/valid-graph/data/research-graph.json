@@ -1,0 +1,38 @@
+{
+  "id": "research-graph",
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-11T00:00:00.000Z",
+  "eligible": true,
+  "eligibilityThreshold": 1,
+  "nodes": [
+    {
+      "id": "paper:paper-one",
+      "nodeType": "paper",
+      "locale": "en",
+      "label": "A Public Paper",
+      "href": "/papers/paper-one/",
+      "tags": [
+        "ai"
+      ]
+    },
+    {
+      "id": "post:graph-post",
+      "nodeType": "post",
+      "locale": "en",
+      "label": "Graph Post",
+      "href": "/blog/graph-post/",
+      "tags": [
+        "research"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge:one",
+      "sourceId": "post:graph-post",
+      "targetId": "paper:paper-one",
+      "relation": "writes-about",
+      "inferred": false
+    }
+  ]
+}

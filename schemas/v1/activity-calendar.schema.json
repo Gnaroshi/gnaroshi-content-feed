@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "https://gnaroshi.dev/schemas/v1/activity-calendar.schema.json",
+  "type": "array", "items": {
+    "type": "object", "additionalProperties": false,
+    "properties": {
+      "date": { "$ref": "https://gnaroshi.dev/schemas/index.json#/$defs/date" }, "readingSessions": { "type": "integer", "minimum": 0 },
+      "distinctPapersTouched": { "type": "integer", "minimum": 0 }, "readingMinutes": { "type": "integer", "minimum": 0 }, "activeDay": { "type": "boolean" },
+      "completedPasses": { "type": "integer", "minimum": 0 }, "revisits": { "type": "integer", "minimum": 0 }, "implementations": { "type": "integer", "minimum": 0 },
+      "deepSessions": { "type": "integer", "minimum": 0 }, "paperIds": { "type": "array", "items": { "type": "string", "minLength": 1 }, "uniqueItems": true }
+    },
+    "required": ["date", "readingSessions", "distinctPapersTouched", "readingMinutes", "activeDay", "completedPasses", "revisits", "implementations", "deepSessions", "paperIds"]
+  }
+}

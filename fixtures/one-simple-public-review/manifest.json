@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "state": "generated",
+  "contentStage": "substantive",
+  "metricEligible": false,
+  "graphEligible": false,
+  "weeklyReviewEligible": false,
+  "generatedAt": "2026-07-11T00:00:00.000Z",
+  "sourceCommits": {
+    "paperLab": "1111111111111111111111111111111111111111",
+    "writing": "2222222222222222222222222222222222222222"
+  },
+  "counts": {
+    "papers": 1,
+    "blogPosts": 0,
+    "readingSessions": 0,
+    "reviews": 1,
+    "oralExams": 0,
+    "formulaRecalls": 0,
+    "implementations": 0,
+    "activityDays": 0,
+    "weeklyReviews": 0,
+    "graphNodes": 0,
+    "graphEdges": 0,
+    "assets": 0
+  },
+  "contentHash": "1ca6639323be2f0dde6760e43e9ec59bb0575b136ccb98485bb904ac7809dd3c",
+  "generator": "fixture@1"
+}

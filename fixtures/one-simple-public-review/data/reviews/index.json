@@ -1,0 +1,26 @@
+[
+  {
+    "id": "review-simple",
+    "schemaVersion": 1,
+    "visibility": "public",
+    "contentStage": "substantive",
+    "metricEligible": true,
+    "graphEligible": false,
+    "weeklyReviewEligible": true,
+    "paperId": "paper-one",
+    "reviewedAt": "2026-07-11T00:00:00.000Z",
+    "reviewer": "ai",
+    "overallScore": 72,
+    "confidence": "medium",
+    "summary": "The main idea is supported by the note.",
+    "strengths": [
+      "Clear question"
+    ],
+    "gaps": [
+      "Experiment detail"
+    ],
+    "nextActions": [
+      "Add exact evidence"
+    ]
+  }
+]

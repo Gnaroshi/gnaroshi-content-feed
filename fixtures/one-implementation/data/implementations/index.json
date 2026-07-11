@@ -1,0 +1,26 @@
+[
+  {
+    "id": "implementation-one",
+    "schemaVersion": 1,
+    "visibility": "public",
+    "contentStage": "substantive",
+    "metricEligible": true,
+    "graphEligible": true,
+    "weeklyReviewEligible": true,
+    "paperIds": [
+      "paper-one"
+    ],
+    "projectIds": [],
+    "date": "2026-07-11",
+    "status": "partially-reproduced",
+    "title": "Public implementation",
+    "goal": "Test the core method",
+    "result": "Partial reproduction",
+    "lessons": [
+      "Document assumptions"
+    ],
+    "tags": [
+      "implementation"
+    ]
+  }
+]

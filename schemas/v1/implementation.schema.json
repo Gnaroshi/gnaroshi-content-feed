@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "https://gnaroshi.dev/schemas/v1/implementation.schema.json",
+  "type": "object", "additionalProperties": false,
+  "properties": {
+    "id": { "type": "string", "minLength": 1 }, "schemaVersion": { "const": 1 }, "visibility": { "enum": ["public", "unlisted"] },
+    "contentStage": { "$ref": "https://gnaroshi.dev/schemas/index.json#/$defs/contentStage" }, "metricEligible": { "type": "boolean" }, "graphEligible": { "type": "boolean" }, "weeklyReviewEligible": { "type": "boolean" },
+    "paperIds": { "type": "array", "items": { "type": "string", "minLength": 1 }, "uniqueItems": true }, "projectIds": { "type": "array", "items": { "type": "string", "minLength": 1 }, "uniqueItems": true },
+    "date": { "$ref": "https://gnaroshi.dev/schemas/index.json#/$defs/date" }, "status": { "enum": ["planned", "in-progress", "partially-reproduced", "reproduced", "failed", "abandoned", "shipped"] },
+    "title": { "type": "string", "minLength": 1 }, "goal": { "type": "string", "minLength": 1 }, "result": { "type": "string", "minLength": 1 },
+    "failureReason": { "type": "string", "minLength": 1 }, "lessons": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "tags": { "type": "array", "items": { "type": "string", "minLength": 1 }, "uniqueItems": true }, "repoUrl": { "type": "string", "format": "uri" }, "demoUrl": { "type": "string", "format": "uri" }
+  },
+  "required": ["id", "schemaVersion", "visibility", "contentStage", "metricEligible", "graphEligible", "weeklyReviewEligible", "paperIds", "projectIds", "date", "status", "title", "goal", "tags"],
+  "anyOf": [{ "properties": { "paperIds": { "minItems": 1 } } }, { "properties": { "projectIds": { "minItems": 1 } } }]
+}

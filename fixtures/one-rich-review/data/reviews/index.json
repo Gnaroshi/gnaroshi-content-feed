@@ -1,0 +1,43 @@
+[
+  {
+    "id": "review-rich",
+    "schemaVersion": 1,
+    "visibility": "public",
+    "contentStage": "substantive",
+    "metricEligible": true,
+    "graphEligible": false,
+    "weeklyReviewEligible": true,
+    "paperId": "paper-one",
+    "reviewedAt": "2026-07-11T00:00:00.000Z",
+    "reviewer": "ai",
+    "overallScore": 86,
+    "confidence": "high",
+    "summary": "Evidence supports a strong understanding.",
+    "strengths": [
+      "Method"
+    ],
+    "gaps": [
+      "Limitations"
+    ],
+    "nextActions": [
+      "Revisit assumptions"
+    ],
+    "dimensions": {
+      "method": {
+        "score": 8,
+        "feedback": "Clear",
+        "evidence": "Explains the mechanism",
+        "nextStep": "Test an edge case"
+      }
+    },
+    "history": [
+      {
+        "reviewedAt": "2026-07-11T00:00:00.000Z",
+        "overallScore": 86,
+        "dimensionScores": {
+          "method": 8
+        }
+      }
+    ]
+  }
+]
