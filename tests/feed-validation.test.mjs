@@ -19,7 +19,7 @@ for (const name of ["bootstrap-empty", "one-english-blog", "one-korean-blog", "t
   });
 }
 
-for (const [name, code] of [["invalid-dangling-graph-edge", "dangling-graph-edge"], ["invalid-manifest-count", "manifest-count"], ["invalid-activity-mismatch", "activity-mismatch"], ["private-leak", "local-user-path"], ["unhashed-asset", "undeclared-asset"]]) {
+for (const [name, code] of [["invalid-dangling-graph-edge", "dangling-graph-edge"], ["invalid-manifest-count", "manifest-count"], ["invalid-activity-mismatch", "activity-mismatch"], ["invalid-build-note-metric", "build-note-eligibility"], ["private-leak", "local-user-path"], ["unhashed-asset", "undeclared-asset"]]) {
   test(`${name} fails with ${code}`, async () => {
     await assert.rejects(validate(name), (error) => `${error.stdout}\n${error.stderr}`.includes(code));
   });

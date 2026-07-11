@@ -13,7 +13,7 @@ const base = (id) => ({
 });
 
 const blog = (id, locale = "en", translationKey = id, translationStatus = "source-only", canonicalSlug = id) => ({
-  ...base(id), locale, translationKey, translationStatus, canonicalSlug, aliases: [], title: `Post ${id}`,
+  ...base(id), category: "research-note", locale, translationKey, translationStatus, canonicalSlug, aliases: [], title: `Post ${id}`,
   description: `Public description for ${id}.`, publishDate: "2026-07-11", tags: ["research"], featured: false, assets: []
 });
 
@@ -155,6 +155,10 @@ const badActivity = await createFeed("invalid-activity-mismatch", async (model) 
 badActivity.manifest.contentHash = await hashFeed(badActivity.feed); await writeJson(join(badActivity.feed, "manifest.json"), badActivity.manifest);
 const leak = await createFeed("private-leak", async (model) => { model.blogs.push({ ...blog("leak"), description: "Local source /Users/private/paper.pdf" }); });
 leak.manifest.contentHash = await hashFeed(leak.feed); await writeJson(join(leak.feed, "manifest.json"), leak.manifest);
+const ineligibleBuildNote = await createFeed("invalid-build-note-metric", async (model) => {
+  model.blogs.push({ ...blog("build-note"), category: "build-note", metricEligible: true });
+});
+ineligibleBuildNote.manifest.contentHash = await hashFeed(ineligibleBuildNote.feed); await writeJson(join(ineligibleBuildNote.feed, "manifest.json"), ineligibleBuildNote.manifest);
 const unhashed = await createFeed("unhashed-asset", async (_model, feed) => {
   await mkdir(join(feed, "assets/not-hashed"), { recursive: true }); await writeFile(join(feed, "assets/not-hashed/image.png"), Buffer.from("not an image"));
 });

@@ -202,6 +202,15 @@ async function main() {
   const expectedActivityList = [...expectedActivity.values()].sort((a, b) => a.date.localeCompare(b.date));
   if (JSON.stringify(stableValue(activity)) !== JSON.stringify(stableValue(expectedActivityList))) addIssue("activity-mismatch", "data/activity-calendar.json", "Activity calendar does not exactly match public reading sessions.");
   unique(blogs.map((record) => record.data.id), "duplicate-id", "blog", "blog ID");
+  const metricWritingCategories = new Set(["research-note", "implementation-note", "paper-note"]);
+  for (const blog of blogs) {
+    if (blog.data.metricEligible && !metricWritingCategories.has(blog.data.category)) {
+      addIssue("writing-category-metric", blog.path, `${blog.data.category} cannot contribute to research output metrics.`);
+    }
+    if (blog.data.category === "build-note" && (blog.data.metricEligible || blog.data.graphEligible || blog.data.weeklyReviewEligible)) {
+      addIssue("build-note-eligibility", blog.path, "Build notes must remain excluded from public evidence metrics.");
+    }
+  }
   for (const [records, label] of [[reviews, "review"], [oralExams, "oral exam"], [formulaRecalls, "formula recall"]]) {
     for (const record of records) if (!paperIds.has(record.paperId)) addIssue("dangling-paper", label, `${record.id} references missing paper ${record.paperId}.`);
   }

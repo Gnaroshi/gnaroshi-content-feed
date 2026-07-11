@@ -28,6 +28,8 @@ The manifest has three explicit states:
 
 Missing evidence stays absent. Generators and consumers must not create placeholder reviews, reading sessions, translations, graph edges, formulas, or metrics.
 
+Public blog records declare `category` as `research-note`, `implementation-note`, `paper-note`, `build-note`, or `essay`. Only the first three categories may contribute to research output metrics. Build notes must remain excluded from metric, graph, and weekly-review evidence.
+
 ## Assets
 
 Every public asset must be declared in `assets/index.json`, use `/assets/<sha256>/<filename>`, match its declared SHA-256 and byte size, and use a supported media type. Raster dimensions are verified. SVG is rejected unless it passes the validator's sanitizer.

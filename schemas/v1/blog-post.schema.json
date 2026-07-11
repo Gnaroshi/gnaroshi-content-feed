@@ -8,6 +8,7 @@
     "createdAt": { "$ref": "https://gnaroshi.dev/schemas/index.json#/$defs/timestamp" }, "updatedAt": { "$ref": "https://gnaroshi.dev/schemas/index.json#/$defs/timestamp" },
     "visibility": { "enum": ["public", "unlisted"] }, "contentStage": { "$ref": "https://gnaroshi.dev/schemas/index.json#/$defs/contentStage" },
     "metricEligible": { "type": "boolean" }, "graphEligible": { "type": "boolean" }, "weeklyReviewEligible": { "type": "boolean" },
+    "category": { "enum": ["research-note", "implementation-note", "paper-note", "build-note", "essay"] },
     "locale": { "$ref": "https://gnaroshi.dev/schemas/index.json#/$defs/locale" }, "translationKey": { "type": "string", "minLength": 1 },
     "translationStatus": { "$ref": "https://gnaroshi.dev/schemas/index.json#/$defs/translationStatus" },
     "canonicalSlug": { "$ref": "https://gnaroshi.dev/schemas/index.json#/$defs/slug" }, "aliases": { "$ref": "https://gnaroshi.dev/schemas/index.json#/$defs/aliases" },
@@ -19,5 +20,5 @@
     "ogImage": { "$ref": "https://gnaroshi.dev/schemas/index.json#/$defs/publicPath" }, "canonicalUrl": { "type": "string", "format": "uri" },
     "assets": { "type": "array", "items": { "$ref": "https://gnaroshi.dev/schemas/index.json#/$defs/publicPath" }, "uniqueItems": true }
   },
-  "required": ["id", "schemaVersion", "createdAt", "updatedAt", "visibility", "contentStage", "metricEligible", "graphEligible", "weeklyReviewEligible", "locale", "translationKey", "translationStatus", "canonicalSlug", "aliases", "title", "description", "publishDate", "tags", "featured", "assets"]
+  "required": ["id", "schemaVersion", "createdAt", "updatedAt", "visibility", "contentStage", "metricEligible", "graphEligible", "weeklyReviewEligible", "category", "locale", "translationKey", "translationStatus", "canonicalSlug", "aliases", "title", "description", "publishDate", "tags", "featured", "assets"]
 }
