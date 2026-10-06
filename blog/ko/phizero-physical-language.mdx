@@ -1,0 +1,55 @@
+---
+id: phizero-physical-language-ko
+schemaVersion: 1
+createdAt: '2026-10-06T06:56:10.000Z'
+updatedAt: '2026-10-06T06:58:26.000Z'
+visibility: public
+contentStage: working
+metricEligible: false
+graphEligible: false
+weeklyReviewEligible: false
+category: paper-note
+locale: ko
+translationKey: phizero-physical-language-ko
+translationStatus: source-only
+canonicalSlug: phizero-physical-language
+aliases: []
+title: 'PhiZero: 영상을 그리기 전에 물리적 변화를 예측하기'
+description: '장면의 변화를 먼저 압축된 표현으로 예측하고 영상으로 복원하는 PhiZero의 접근과, 결과를 읽을 때 구분해야 할 점을 정리합니다.'
+publishDate: '2026-10-06'
+tags:
+  - world-model
+  - physical-ai
+featured: false
+assets: []
+---
+> 이 글은 논문에 대한 개인적인 정리와 해석입니다. 논문 저자의 공식 입장이 아니며, 잘못 이해한 부분이 있을 수 있습니다. 정확한 내용은 원문을 확인해 주세요.
+
+공개 발행 흐름을 점검하기 위해 AI의 도움으로 작성한 소개 글입니다. 직접 수행한 재현 실험이나 완독 기록을 뜻하지 않습니다.
+
+## 논문 정보
+
+- **논문:** PhiZero: A World Model Built Around Physical Language
+- **저자:** Shuyao Shang 외 6명
+- **공개:** arXiv, 2026년 7월 30일, v1
+- [논문 원문](https://arxiv.org/abs/2607.28624v1) · [공식 프로젝트](https://phi-zero.github.io/)
+
+## 핵심 요약
+
+PhiZero는 미래 영상을 바로 생성하기보다, **무엇이 어떻게 변할지 먼저 예측한 뒤 영상으로 그리는** 월드 모델이다. 여기서 ‘physical language’는 사람이 읽는 문장이나 물리 법칙이 아니라, 영상의 상태 변화를 압축한 이산 표현을 뜻한다. 토크나이저가 변화 표현을 학습하고, 추론 모델이 첫 장면과 텍스트로 주어진 행동 설명에서 다음 변화 표현을 예측한다. 디코더는 예측된 표현과 첫 장면을 바탕으로 미래 영상을 생성한다. ([방법, 3절](https://arxiv.org/html/2607.28624v1#S3))
+
+## 주요 결과와 근거
+
+저자들은 영상 생성과 물리적 타당성 판단을 함께 평가했다. Physics-IQ Verified의 IQ-Score는 PhiZero 41.2, Cosmos3-Super 39.5로 보고됐다. 다만 같은 표의 WS-IoU에서는 PhiZero가 가장 높지 않다. 한 종합 점수의 우위를 모든 상황의 우위로 읽으면 안 된다. 이 수치는 논문의 보고값이며 별도로 재현하지 않았다. ([표 1](https://arxiv.org/html/2607.28624v1#S3.T2.fig1))
+
+## 의의와 한계
+
+이 접근에서 주목할 점은 ‘보기 좋은 영상’과 ‘타당한 상태 변화’를 분리해 다루려는 설계다. 다만 학습된 표현을 곧바로 물리 법칙에 대한 이해로 해석할 수는 없다. 또한 영상 예측 성능만으로 실제 로봇 제어 성능을 판단할 수 없다. 이는 결과를 읽는 관점이지, 이 글에서 검증한 결론은 아니다.
+
+## 더 확인할 점
+
+- 긴 시간 동안 반복 예측할 때 오류가 얼마나 누적되는가?
+- 논문에 제시된 사례를 넘어, 외형이나 장면 구성이 달라져도 같은 변화 표현을 어디까지 재사용할 수 있는가?
+- 실제 제어에 연결하려면 어떤 관측·행동 인터페이스가 필요한가?
+
+추가 검토에서는 벤치마크 조건, 실패 사례, 재현에 필요한 자료의 공개 여부를 확인할 필요가 있다.
