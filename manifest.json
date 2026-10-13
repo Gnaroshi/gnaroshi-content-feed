@@ -1,10 +1,10 @@
 {
-  "contentHash": "c9a73861cd05863e59caee1bfb115bd979f2b59f25d5e72dbb8307179b5462ee",
-  "contentStage": "working",
+  "contentHash": "29930cc4a90983a90a7baaed34b3c16ae2c238c221336c0614d114ef78896207",
+  "contentStage": "substantive",
   "counts": {
     "activityDays": 0,
     "assets": 0,
-    "blogPosts": 1,
+    "blogPosts": 3,
     "formulaRecalls": 0,
     "graphEdges": 0,
     "graphNodes": 0,
@@ -15,14 +15,14 @@
     "reviews": 0,
     "weeklyReviews": 0
   },
-  "generatedAt": "2026-10-13T04:56:44.627Z",
+  "generatedAt": "2026-10-13T07:43:44.894Z",
   "generator": "@gnaroshi/publisher@0.1.0",
   "graphEligible": false,
   "metricEligible": false,
   "schemaVersion": 1,
   "sourceCommits": {
     "paperLab": "6b0c127979fedbcd1a47f79f16f1b257458b6b78",
-    "writing": "eac1a8e2b7fa9d3d2d9744f665bd8b70b05aac38"
+    "writing": "29ca65e8da6e3972b2e49fe22ebe088daec608f7"
   },
   "state": "generated",
   "weeklyReviewEligible": false
