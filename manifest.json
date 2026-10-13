@@ -1,5 +1,5 @@
 {
-  "contentHash": "798d069f142a8c72f5fee9ddd518607cf8c81eec0946f8b6703b5dec0a3adde8",
+  "contentHash": "1eec8bc9742995d71bd1bfe643007f874c650deff114a89a03c45d340cc22bdc",
   "contentStage": "substantive",
   "counts": {
     "activityDays": 0,
@@ -15,14 +15,14 @@
     "reviews": 0,
     "weeklyReviews": 0
   },
-  "generatedAt": "2026-10-12T18:07:07.644Z",
+  "generatedAt": "2026-10-13T04:56:44.627Z",
   "generator": "@gnaroshi/publisher@0.1.0",
   "graphEligible": false,
   "metricEligible": false,
   "schemaVersion": 1,
   "sourceCommits": {
     "paperLab": "6b0c127979fedbcd1a47f79f16f1b257458b6b78",
-    "writing": "8808518525ca31d7a1d370f7446d35445fe4b5be"
+    "writing": "35683ed8d39b89ba7d15409a91ce805a3bdb53f2"
   },
   "state": "generated",
   "weeklyReviewEligible": false
