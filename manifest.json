@@ -1,10 +1,10 @@
 {
-  "contentHash": "29930cc4a90983a90a7baaed34b3c16ae2c238c221336c0614d114ef78896207",
+  "contentHash": "7c4a71216ffe11ea6772aa90b446a7ff8c4ead9f9e84dc733836c78cb46b52e6",
   "contentStage": "substantive",
   "counts": {
     "activityDays": 0,
     "assets": 0,
-    "blogPosts": 3,
+    "blogPosts": 2,
     "formulaRecalls": 0,
     "graphEdges": 0,
     "graphNodes": 0,
@@ -22,7 +22,7 @@
   "schemaVersion": 1,
   "sourceCommits": {
     "paperLab": "6b0c127979fedbcd1a47f79f16f1b257458b6b78",
-    "writing": "29ca65e8da6e3972b2e49fe22ebe088daec608f7"
+    "writing": "7b93aec326c4d7142359fe3eee39af27ea3bbcd9"
   },
   "state": "generated",
   "weeklyReviewEligible": false
