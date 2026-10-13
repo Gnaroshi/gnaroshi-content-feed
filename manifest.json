@@ -1,5 +1,5 @@
 {
-  "contentHash": "7e8f3a341154f83282511d8bf773ee3ca35232bf1beafb07f720ba06164a6a1d",
+  "contentHash": "798d069f142a8c72f5fee9ddd518607cf8c81eec0946f8b6703b5dec0a3adde8",
   "contentStage": "substantive",
   "counts": {
     "activityDays": 0,
@@ -22,7 +22,7 @@
   "schemaVersion": 1,
   "sourceCommits": {
     "paperLab": "6b0c127979fedbcd1a47f79f16f1b257458b6b78",
-    "writing": "bead7773f9a3b75718b29edaa60949b6e305dbba"
+    "writing": "8808518525ca31d7a1d370f7446d35445fe4b5be"
   },
   "state": "generated",
   "weeklyReviewEligible": false
